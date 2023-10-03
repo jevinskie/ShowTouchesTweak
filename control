@@ -1,0 +1,9 @@
+Package: vin.je.showtouches
+Name: ShowTouches
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Description: A UIKit tweak to show touches on iOS. Useful for screen recording demos.
+Maintainer: Jevin Sweval
+Author: Jevin Sweval
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.3), uikittools

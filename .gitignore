@@ -1,0 +1,11 @@
+.theos/
+packages/
+# for when I dpkg extract to inspect the build
+unpkg/
+
+# Finder
+**/.DS_Store
+
+# VS Code
+**/.vscode/
+**/.vscode-ctags
