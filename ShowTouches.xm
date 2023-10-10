@@ -10,10 +10,9 @@ static BOOL enabled;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name,
                                  const void *object, CFDictionaryRef userInfo) {
-    NSNumber *enabledValue =
-        (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled"
-                                                               inDomain:nsDomainString];
-    enabled = (enabledValue) ? [enabledValue boolValue] : YES;
+    NSNumber *enabledValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"enabled"
+                                                                        inDomain:nsDomainString];
+    enabled                = (enabledValue) ? [enabledValue boolValue] : YES;
 }
 
 %ctor {
@@ -26,12 +25,12 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
                                     CFNotificationSuspensionBehaviorCoalesce);
 
     // Add any personal initializations
-	NSLog(@"ShowTouches loaded in %@\n", NSProcessInfo.processInfo.processName);
+    NSLog(@"ShowTouches loaded in %@\n", NSProcessInfo.processInfo.processName);
 }
 
 %hookf(bool, os_variant_has_internal_diagnostics, const char *subsystem) {
-	if (!strcmp(subsystem, "com.apple.UIKit")) {
-		return true;
-	}
-	return %orig;
+    if (!strcmp(subsystem, "com.apple.UIKit")) {
+        return true;
+    }
+    return %orig;
 }

@@ -1,0 +1,18 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+  - id: check-yaml
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.10.0
+  hooks:
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+- repo: https://github.com/jevinskie/mirrors-clang-format
+  rev: v17.0.2
+  hooks:
+  - id: clang-format
+- repo: https://github.com/jevinskie/logos-format
+  rev: v0.1.0
+  hooks:
+  - id: logos-format
